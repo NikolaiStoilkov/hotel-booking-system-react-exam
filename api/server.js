@@ -1,7 +1,14 @@
 const express = require('express');
 
-
+const cors = require('cors');
+const config = require('./config/index')
 const app = express();
+const routes = require('./routes')
 
 
-app.listen(5000, () => console.log(`Server is running on port: 5000...`));
+app.use(cors());
+require('./config/mongoose')();
+
+app.use(routes);
+
+app.listen(config.PORT, () => console.log(`Server is running on port: ${config.PORT}...`));
