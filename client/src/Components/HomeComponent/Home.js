@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Home';
 
+import ImageSlider from '../ImageSliderComponent/ImageSlider';
+import { SliderData } from '../SliderDataComponent/SliderData';
+
 const Home = () => {
 
 
     return (
-        <h1>
-            Hi!
-        </h1>
+        <ImageSlider slides={ SliderData }>
+            
+        </ImageSlider>
     )
 }
 

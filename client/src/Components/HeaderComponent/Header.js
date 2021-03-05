@@ -29,12 +29,6 @@ const Header = () => {
                     <a href="/hotel">HOTEL</a>
                 </li>
                 <li>
-                    <a href="/rooms">ROOMS</a>
-                </li>
-                <li>
-                    <a href="/restaurants">RESTAURANTS</a>
-                </li>
-                <li>
                     <a href="/spa">SPA</a>
                 </li>
                 <li>

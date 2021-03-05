@@ -53,7 +53,7 @@
     justify-content: space-around;
     align-items: center;
     min-height: 8rem;
-    
+    z-index: 10;
     background: linear-gradient(to bottom, #007fff 10%,#007fff 100%);
 
 }
