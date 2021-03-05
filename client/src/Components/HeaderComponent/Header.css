@@ -1,0 +1,105 @@
+/* .header-logo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(11, 46, 8);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(11, 46, 8);
+
+}
+
+.navbar a, .navbar li{
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    margin: 0.5rem;
+    height: 1.5rem;
+    width: 8rem;
+
+}
+
+.bar{
+    height: 1vh;
+    background-color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .navbar a:not(:first-child){
+      display: none;
+    }
+    
+  } 
+
+.navbar a:hover{
+    background-image: linear-gradient(to top, #c2c2c2,  #66000000);
+    cursor: pointer;
+}
+
+*/
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8rem;
+    
+    background: linear-gradient(to bottom, #007fff 10%,#007fff 100%);
+
+}
+
+.navbar-links{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+.navbar-links li{
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    margin: 0.5rem;
+    height: 1.5rem;
+    width: 8rem;
+    cursor: pointer;
+    
+}
+
+.navbar-links a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar-links li:hover{
+    background-color: rgba(255, 255, 255, 0.315);
+}
+
+
+
+.logo{
+    width: 9rem;
+    height: 5.5rem;
+} 
+
+.sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+}

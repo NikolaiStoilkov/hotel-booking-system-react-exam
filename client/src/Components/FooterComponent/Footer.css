@@ -1,0 +1,62 @@
+.footer {
+    width: 100%;
+    height: 20rem;
+    background-color: rgb(92, 92, 92);
+    position: relative;
+    color: white;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer div {
+    margin: 1rem 6rem 0rem 7rem;
+    align-items: center;
+}
+
+.footer ul {
+    padding: 0;
+}
+
+.footer li {
+    list-style-type: none;
+    
+}
+
+.footer div h3 {
+
+}
+
+
+.footer-right-colum li{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+
+.footer-right-colum img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.facebook {
+    background-color: white;
+}
+
+.footer-left-colum a{
+    text-decoration: none;
+    color: white;
+    padding: 0.2rem;
+    margin: 0.5rem;
+}
+
+.footer-left-colum a:hover{
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: inherit;
+}
