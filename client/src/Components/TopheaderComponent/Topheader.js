@@ -7,8 +7,8 @@ const Topheader = () => {
     return (
         <div>
 
-            <div class="topheader">
-                <img className="topheader-img" src={topheaderImg}></img>
+            <div className="topheader">
+                <img className="topheader-img" src={topheaderImg} alt="topheader"></img>
 
                 <a href="/">
                     <h1>ROYAL PALACE</h1>

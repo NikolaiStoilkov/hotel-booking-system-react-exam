@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import './Header.css';
 import HotelLogo from '../../images/whitepalace.png'
 
@@ -8,7 +7,6 @@ const Header = () => {
     useEffect(() => {
         const header = document.getElementById("header");
         const scrollCallBack = window.addEventListener("scroll", () => {
-            console.log(window.pageXOffset)
             if (window.pageYOffset > header.offsetHeight) {
                 header.classList.add("sticky");
                 setHeaderText();

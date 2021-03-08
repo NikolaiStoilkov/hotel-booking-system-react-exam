@@ -1,6 +1,8 @@
 const router = require('express').Router();
 
-router.post('/auth/register', (req,res) => {
+router.post('/register', (req,res) => {
+    console.log(JSON.stringify(req.body));
+    
     res.json({msg: 'HI'})
 })
 

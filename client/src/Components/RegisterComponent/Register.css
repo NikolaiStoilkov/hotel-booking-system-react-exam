@@ -1,0 +1,85 @@
+
+.register{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 33rem;
+
+}
+
+.form-register{
+    top: 70%;
+    margin: 10rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-register label{
+    margin: 1rem;
+    font-size: 2rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.form-register input[type=text]{
+    outline: none;
+    border-style: hidden;
+    font-size: 2rem;
+
+}
+
+
+.form-register input[type=text]:hover{
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+
+.form-register hr{
+    width: 100%;
+    color: black;
+    height: 1px;
+}
+
+.form-register input[type=password]{
+    outline: none;
+    font-size: 2rem;
+    border-style: hidden;
+
+}
+
+.form-register input[type=password]:hover{
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.form-register input[type=rePassword]{
+    outline: none;
+    font-size: 2rem;
+    border-style: hidden;
+
+}
+
+.form-register input[type=rePassword]:hover{
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.form-register input[type=submit]{
+    margin: 1rem;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem;
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: #007fff;
+    color: white;
+}
+
+.form-register input[type=submit]:hover{
+    background-color: #0065ca;
+
+}

@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Routes from './Routes';
-import Header from './Components/HeaderComponent/Header'
-import Topheader from './Components/TopheaderComponent/Topheader'
-import Footer from './Components/FooterComponent/Footer'
+import Header from './components/HeaderComponent/Header'
+import Topheader from './components/TopheaderComponent/Topheader'
+import Footer from './components/FooterComponent/Footer'
 
 ReactDOM.render(
     <React.StrictMode>
