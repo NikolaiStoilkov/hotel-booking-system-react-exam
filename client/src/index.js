@@ -6,13 +6,24 @@ import Routes from './Routes';
 import Header from './components/HeaderComponent/Header'
 import Topheader from './components/TopheaderComponent/Topheader'
 import Footer from './components/FooterComponent/Footer'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    withRouter,
+    BrowserRouter
+} from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Topheader></Topheader>
-        <Header></Header>
-        <Routes />
-        <Footer />
+        <BrowserRouter>
+            <Topheader />
+            <Header />
+            <Routes />
+            <Footer />
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
