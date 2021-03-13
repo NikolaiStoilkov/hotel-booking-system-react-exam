@@ -18,18 +18,19 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
-
+    let token;
     try {
-        let token = await Auth.Login({ username, password });
+        token = await Auth.Login({ username, password });
 
-        console.log(token);
-        
-        res.cookie(COOKIE_NAME, token);
-
+        res
+            .cookie(COOKIE_NAME, token, { withCredentials: true })
+            .end();
     } catch (error) {
         //TODO: send error message
         console.log(error);
     }
+
+
 })
 
 module.exports = router;

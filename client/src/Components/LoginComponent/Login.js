@@ -3,6 +3,11 @@ import { useHistory } from 'react-router-dom';
 
 import END_POINTS from "../../config/END_POINTS";
 
+const cookie = () => {
+    let allCookies = document.headers.get('USER_SESSION');
+    console.log(allCookies);
+}
+
 const Login = () => {
     const [user, setUser] = useState({
         username: '',
@@ -11,6 +16,7 @@ const Login = () => {
 
     const history = useHistory();
 
+    
     const HandleChange = (e) => {
         const { name, value } = e.target;
 
@@ -32,12 +38,14 @@ const Login = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
+            credentials: "include",
             body: JSON.stringify(user)
         })
-            .then(data => {
-                console.log(data);
-
-                history.push('/');
+            .then(resp => {
+                return resp.json();
+            })
+            .then(res => {
+                console.log(res);
             })
             .catch((error) => {
                 //TODO: make notification
