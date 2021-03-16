@@ -38,14 +38,14 @@ const Login = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: "include",
             body: JSON.stringify(user)
         })
             .then(resp => {
                 return resp.json();
             })
             .then(res => {
-                console.log(res);
+                localStorage.setItem('user', res.token);
+                history.push('/');
             })
             .catch((error) => {
                 //TODO: make notification

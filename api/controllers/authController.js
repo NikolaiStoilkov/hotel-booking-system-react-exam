@@ -22,9 +22,9 @@ router.post('/login', async (req, res) => {
     try {
         token = await Auth.Login({ username, password });
 
-        res
-            .cookie(COOKIE_NAME, token, { withCredentials: true })
-            .end();
+        res.status(200).json({
+            token,
+        })
     } catch (error) {
         //TODO: send error message
         console.log(error);

@@ -96,3 +96,16 @@
         font-size: 5rem;
     }
 }
+
+@media only screen and (width: 1920px){
+
+    .topheader{
+        height: 51rem;
+    }
+
+    .topheader img {
+        height: 100%;
+    }
+}
+
+
