@@ -30,7 +30,7 @@ const Header = () => {
                     <a href="/spa">SPA</a>
                 </li>
                 <li>
-                    <a href="/contacts">CONTACTS</a>
+                    <a href="/useful">USEFUL</a>
                 </li>
                 <li>
                     <a href="/login">LOGIN</a>

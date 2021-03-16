@@ -9,10 +9,6 @@ const ImageSlider = ({ slides }) => {
 
     const length = slides.length;
 
-    if (!Array.isArray(slides) || slides.length <= 0) {
-        return null
-    }
-
     const nextSlider = () => {
         setCurrent(current === length - 1 ? 0 : current + 1)
     };
@@ -21,7 +17,16 @@ const ImageSlider = ({ slides }) => {
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
 
+    setTimeout(() => {
+        console.log(current);
+        nextSlider();
+    }, 4000)
 
+
+
+    if (!Array.isArray(slides) || slides.length <= 0) {
+        return null
+    }
 
     return (
         <section className="slider">
@@ -38,7 +43,7 @@ const ImageSlider = ({ slides }) => {
         </section>
     );
 
-    
+
 }
 
 export default ImageSlider;
