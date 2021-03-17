@@ -44,7 +44,8 @@ const Login = () => {
                 return resp.json();
             })
             .then(res => {
-                localStorage.setItem('user', res.token);
+                console.log(res);
+                localStorage.setItem('user', JSON.stringify(res));
                 history.push('/');
             })
             .catch((error) => {

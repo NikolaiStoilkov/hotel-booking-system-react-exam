@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { SliderData } from '../SliderDataComponent/SliderData.js'
 import './ImageSlider.css';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
@@ -9,18 +9,21 @@ const ImageSlider = ({ slides }) => {
 
     const length = slides.length;
 
-    const nextSlider = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1)
-    };
+    
+    const nextSlider = useCallback(() => {
+        setCurrent((current) => current === length - 1 ? 0 : current + 1);
+    }, [length]);
 
-    const prevSlider = () => {
-        setCurrent(current === 0 ? length - 1 : current - 1)
-    }
+    const prevSlider = useCallback((current) => {
+        setCurrent((current) => current === 0 ? length - 1 : current -1);
+    })
 
-    setTimeout(() => {
-        console.log(current);
-        nextSlider();
-    }, 4000)
+    useEffect(() => {
+        setInterval(() => {
+            console.log(current);
+            nextSlider();
+        }, 5000)
+    }, []);
 
 
 
