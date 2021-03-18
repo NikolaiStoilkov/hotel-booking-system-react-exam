@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Header from '../HeaderComponent/Header'
+import Topheader from '../TopheaderComponent/Topheader'
+import Footer from '../FooterComponent/Footer'
 import END_POINTS from "../../config/END_POINTS";
-
-const cookie = () => {
-    let allCookies = document.headers.get('USER_SESSION');
-    console.log(allCookies);
-}
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -16,7 +14,6 @@ const Login = () => {
 
     const history = useHistory();
 
-    
     const HandleChange = (e) => {
         const { name, value } = e.target;
 
@@ -56,15 +53,21 @@ const Login = () => {
 
     return (
         <div>
-            <form className='form-register'>
-                <label>Username</label>
-                <input type='text' onChange={HandleChange} name='username' value={user.username}  ></input>
-                <hr></hr>
-                <label>Password</label>
-                <input type='password' onChange={HandleChange} name='password' value={user.password}></input>
-                <hr></hr>
-                <input type='submit' onClick={HandlerClick} value='Login'></input>
-            </form>
+            <Topheader />
+            <Header />
+            <div>
+                <form className='form-register'>
+                    <label>Username</label>
+                    <input type='text' onChange={HandleChange} name='username' value={user.username}  ></input>
+                    <hr></hr>
+                    <label>Password</label>
+                    <input type='password' onChange={HandleChange} name='password' value={user.password}></input>
+                    <hr></hr>
+                    <input type='submit' onClick={HandlerClick} value='Login'></input>
+                </form>
+
+            </div>
+            <Footer />
         </div>
     )
 }

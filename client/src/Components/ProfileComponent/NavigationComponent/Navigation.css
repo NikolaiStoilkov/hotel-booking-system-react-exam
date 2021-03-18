@@ -1,0 +1,91 @@
+.profile-background{
+    background-image: url('../../../images/walls.jpg');
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -o-object-fit: contain;
+    object-fit: contain;
+    
+}
+
+.navigation{
+    width: 95%;
+    height: 35rem;
+    justify-content: space-around;
+    border: 0.13rem solid white;
+    border-radius: 1rem;
+    margin: 2rem;
+    display: flex;
+    background-color: #0080ffb8;
+}
+
+.navigation-bar{
+    width: 20%;
+
+}
+
+.navigation ul {
+    display: block;
+    
+}
+
+.navigation span{
+    width: 0.13rem;
+    background-color: white;
+    height: 100%;
+    margin: -0.0rem 0rem 0rem 0rem;
+    padding: auto;
+}
+
+.navigation  .navigation-bar li {
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    margin: 6rem 0rem 6rem 0rem;
+    height: 1.5rem;
+    width: 8rem;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 0.6rem;
+
+}
+
+.navigation .navigation-bar li:hover{
+    background-color: rgba(255, 255, 255, 0.297);
+
+}
+
+.navigation .navigation-bar a {
+    text-decoration: none;
+    color: white;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.7rem;
+}
+
+.navigation-book-list{
+    height: 1rem;
+    width: 80%;
+    margin: 4rem;
+
+}
+
+.book-list-container{
+    
+    height: 25rem;
+    border-radius: 0.5rem;
+}
+
+.navigation-book-list .book-list-container li {
+    list-style: none;
+
+}
+

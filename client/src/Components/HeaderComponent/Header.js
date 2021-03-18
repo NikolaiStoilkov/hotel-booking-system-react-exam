@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
+import LoggedHeader from './splitComponents/LoggedHeader'
+import GuestHeader from './splitComponents/GuestHeader';
 import HotelLogo from '../../images/whitepalace.png'
 
-const Header = () => {
-    const [headerText, setHeaderText] = useState();
+const Header = (props) => {
+    const [auth, setAuth] = useState({
+        isLogged: false,
+        _id: '',
+        username: '',
+        token: ''
+    })
+
+    useEffect(() => {
+        if (localStorage.getItem('user')) {
+            console.log(JSON.parse(localStorage.getItem('user')))
+            setAuth(JSON.parse(localStorage.getItem('user')));
+        }
+    }, []);
+
     useEffect(() => {
         const header = document.getElementById("header");
         const scrollCallBack = window.addEventListener("scroll", () => {
             if (window.pageYOffset > header.offsetHeight) {
                 header.classList.add("sticky");
-                setHeaderText();
             } else {
                 header.classList.remove("sticky");
             }
@@ -20,29 +34,11 @@ const Header = () => {
     }, []);
 
     return (
-        <header id="header" className="navbar">
-            <img src={HotelLogo} className="logo"></img>
-            <ul className="navbar-links">
-                <li>
-                    <a href="/hotel">HOTEL</a>
-                </li>
-                <li>
-                    <a href="/spa">SPA</a>
-                </li>
-                <li>
-                    <a href="/useful">USEFUL</a>
-                </li>
-                <li>
-                    <a href="/login">LOGIN</a>
-                </li>
-                <li>
-                    <a href="/register">REGISTER</a>
-                </li>
+        <div>
+            { auth.isLogged ? <LoggedHeader image={HotelLogo} /> : <GuestHeader image={HotelLogo} />}
+        </div>)
 
 
-            </ul>
-        </header>
-    )
 }
 
 export default Header;

@@ -1,7 +1,12 @@
 
-import { useEffect, useState } from 'react';
-import { Redirect, Route, Router, Switch, useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import './Register.css';
+
+import Header from '../HeaderComponent/Header'
+import Topheader from '../TopheaderComponent/Topheader'
+import Footer from '../FooterComponent/Footer'
 import END_POINTS from '../../config/END_POINTS';
 
 const Register = () => {
@@ -55,19 +60,24 @@ const Register = () => {
     }
 
     return (
-        <div className='register'>
-            <form className="form-register">
-                <label>Username</label>
-                <input type='text' onChange={HandleChange} name='username' value={user.username}></input>
-                <hr></hr>
-                <label>Password</label>
-                <input type='password' onChange={HandleChange} name='password' value={user.password}></input>
-                <hr></hr>
-                <label>Repeat password</label>
-                <input type='password' onChange={HandleChange} name='rePassword' value={user.rePassword}></input>
-                <hr></hr>
-                <input type='submit' onClick={HandleClick} value='Register'></input>
-            </form>
+        <div>
+            <Topheader />
+            <Header />
+            <div className='register'>
+                <form className="form-register">
+                    <label>Username</label>
+                    <input type='text' onChange={HandleChange} name='username' value={user.username}></input>
+                    <hr></hr>
+                    <label>Password</label>
+                    <input type='password' onChange={HandleChange} name='password' value={user.password}></input>
+                    <hr></hr>
+                    <label>Repeat password</label>
+                    <input type='password' onChange={HandleChange} name='rePassword' value={user.rePassword}></input>
+                    <hr></hr>
+                    <input type='submit' onClick={HandleClick} value='Register'></input>
+                </form>
+            </div>
+            <Footer />
         </div>
     );
 }

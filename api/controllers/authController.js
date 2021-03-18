@@ -6,8 +6,6 @@ const { COOKIE_NAME } = require('../config/index');
 
 router.post('/register', async (req, res) => {
     const { username, password, rePassword } = req.body;
-
-
     //try if password and rePassword match
 
     //register user
@@ -20,7 +18,7 @@ router.post('/login', async (req, res) => {
     const { username, password } = req.body;
     let token;
     let user;
-
+    let isLogged;
     try {
         token = await Auth.Login({ username, password });
         if (token === null) {
@@ -28,7 +26,9 @@ router.post('/login', async (req, res) => {
         } else {
             user = await Auth.getUserInfo({ username })
             console.log(JSON.stringify(user));
+            isLogged = true;
             res.status(200).json({
+                isLogged,
                 _id: user._id,
                 username: user.username,
                 token: token,

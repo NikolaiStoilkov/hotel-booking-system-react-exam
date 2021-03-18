@@ -1,32 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import Routes from './Routes';
-import Header from './components/HeaderComponent/Header'
-import Topheader from './components/TopheaderComponent/Topheader'
-import Footer from './components/FooterComponent/Footer'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useRouteMatch,
-    withRouter,
-    BrowserRouter
-} from "react-router-dom";
+
+import './index.css';
+
+
+import Home from './components/HomeComponent/Home';
+import Hotel from './components/HotelComponent/Hotel';
+import Register from './components/RegisterComponent/Register';
+import Login from './components/LoginComponent/Login';
+import Logout from './components/Logout';
+import Profile from './components/ProfileComponent/Profile'
+
+
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Topheader />
-            <Header />
-            <Routes />
-            <Footer />
+            <Switch>
+                <Route path='/profile' component={Profile} />
+                <Route path='/logout' component={Logout} />
+                <Route path='/login' component={Login} />
+                <Route path='/register' component={Register} />
+                <Route path='/hotel' component={Hotel} />
+                <Route path="/" component={Home} />
+            </Switch>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

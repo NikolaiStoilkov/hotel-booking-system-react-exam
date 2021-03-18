@@ -45,28 +45,28 @@ const Footer = () => {
                 <h3>Follow us!</h3>
                 <ul>
                     <li>
-                        <a href='#'>
-                            <img className="facebook"src={facebook}></img>
+                        <a href='www.facebook.com'>
+                            <img className="facebook"src={facebook} alt="facebook"></img>
                         </a>
                     </li>
                     <li>
-                        <a href='#'>
-                            <img src={googleMaps}></img>
+                        <a href='www.google.com'>
+                            <img src={googleMaps} alt="google"></img>
                         </a>
                     </li>
                     <li>
-                        <a href='#'>
-                            <img src={youtube}></img>
+                        <a href='www.youtube.com'>
+                            <img src={youtube} alt="youtube" ></img>
                         </a>
                     </li>
                     <li>
-                        <a href='#'>
-                            <img src={instagram}></img>
+                        <a href='www.instagram.vom'>
+                            <img src={instagram} alt="instagram"></img>
                         </a>
                     </li>
                     <li>
-                        <a href='#'>
-                            <img src={twitter}></img>
+                        <a href='www.twitter.com'>
+                            <img src={twitter} alt="twitter"></img>
                         </a>
                     </li>
                 </ul>
