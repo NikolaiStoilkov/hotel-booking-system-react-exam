@@ -1,0 +1,54 @@
+.booking{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    right: 0;
+}
+
+.booking label{
+    color: white;
+    margin: 0.5rem;
+}
+
+.booking li {
+    display: grid;
+    width: 80%;
+    text-align: center;
+}
+
+.booking input{
+    outline: none;
+    color: white
+}
+
+.booking input[type='date'], input[type='text']{
+    background-color: transparent;
+    height: 1.5rem;
+    border: none;
+    font-size: 18px;
+}
+
+.booking-underscore{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+
+.booking-button{
+    margin: 1rem;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px white solid;
+    outline: none;
+    margin-top: 10%;
+}
+
+.booking-button:hover{
+    background-color: rgba(255, 255, 255, 0.352);
+    cursor: pointer;
+}

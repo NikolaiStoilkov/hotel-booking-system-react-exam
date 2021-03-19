@@ -14,7 +14,6 @@ const Header = (props) => {
 
     useEffect(() => {
         if (localStorage.getItem('user')) {
-            console.log(JSON.parse(localStorage.getItem('user')))
             setAuth(JSON.parse(localStorage.getItem('user')));
         }
     }, []);

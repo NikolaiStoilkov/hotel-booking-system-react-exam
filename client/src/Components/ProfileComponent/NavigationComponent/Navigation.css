@@ -16,13 +16,13 @@
 
 .navigation{
     width: 95%;
-    height: 35rem;
+    height: 45rem;
     justify-content: space-around;
     border: 0.13rem solid white;
     border-radius: 1rem;
     margin: 2rem;
     display: flex;
-    background-color: #0080ffb8;
+    background-color: #0080ffbb;
 }
 
 .navigation-bar{
@@ -35,7 +35,7 @@
     
 }
 
-.navigation span{
+.navigation .line{
     width: 0.13rem;
     background-color: white;
     height: 100%;
@@ -75,11 +75,10 @@
     height: 1rem;
     width: 80%;
     margin: 4rem;
-
 }
 
 .book-list-container{
-    
+   
     height: 25rem;
     border-radius: 0.5rem;
 }
@@ -89,3 +88,10 @@
 
 }
 
+.navigation .navigation-book-list .user {
+    background-color: transparent;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    margin: 30%;
+}

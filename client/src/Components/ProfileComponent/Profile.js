@@ -1,12 +1,15 @@
 
 
+
+
 import './Profile.css'
 import Navigation from './NavigationComponent/Navigation'
+
+
 
 const Profile = () => {
 
 
-    
 
     return (
         <div>
