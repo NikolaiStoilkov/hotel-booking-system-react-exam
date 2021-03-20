@@ -22,7 +22,7 @@
     color: white
 }
 
-.booking input[type='date'], input[type='text']{
+.booking input[type='date'], .booking input[type='text']{
     background-color: transparent;
     height: 1.5rem;
     border: none;

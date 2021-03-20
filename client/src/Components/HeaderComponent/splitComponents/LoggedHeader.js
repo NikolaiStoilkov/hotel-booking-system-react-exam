@@ -4,6 +4,7 @@ import '../Header.css'
 
 const LoggedHeader = ({ image }) => {
 
+    
     return (
         <header id="header" className="navbar">
             <img src={image} className="logo" ></img>

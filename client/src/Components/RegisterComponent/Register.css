@@ -27,13 +27,13 @@
     outline: none;
     border-style: hidden;
     font-size: 2rem;
+    border-radius: 10px;
 
 }
 
 
 .form-register input[type=text]:hover{
     background-color: lightgray;
-    border-radius: 10px;
 }
 
 

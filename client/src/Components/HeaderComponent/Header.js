@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
-import LoggedHeader from './splitComponents/LoggedHeader'
-import GuestHeader from './splitComponents/GuestHeader';
 import HotelLogo from '../../images/whitepalace.png'
 
 const Header = (props) => {
@@ -18,6 +16,7 @@ const Header = (props) => {
         }
     }, []);
 
+
     useEffect(() => {
         const header = document.getElementById("header");
         const scrollCallBack = window.addEventListener("scroll", () => {
@@ -32,11 +31,43 @@ const Header = (props) => {
         };
     }, []);
 
-    return (
-        <div>
-            { auth.isLogged ? <LoggedHeader image={HotelLogo} /> : <GuestHeader image={HotelLogo} />}
-        </div>)
 
+    return (
+        <header id="header" className="navbar">
+            <img src={HotelLogo} className="logo" alt="hotelLogo"></img>
+            <ul className="navbar-links">
+                <li>
+                    <a href="/hotel">HOTEL</a>
+                </li>
+                <li>
+                    <a href="/spa">SPA</a>
+                </li>
+                <li>
+                    <a href="/useful">USEFUL</a>
+                </li>
+                {
+                    auth.isLogged === false ?
+                        <li>
+                            <a href="/login">LOGIN</a>
+                        </li>
+                        :
+                        <li>
+                            <a href="/profile">PROFILE</a>
+                        </li>
+                }
+                {
+                    auth.isLogged === false ?
+                        <li>
+                            <a href="/register">REGISTER</a>
+                        </li>
+                        :
+                        <li>
+                            <a href="/logout">LOGOUT</a>
+                        </li>
+                }
+            </ul>
+        </header>
+    )
 
 }
 
