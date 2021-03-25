@@ -30,17 +30,17 @@
 
 }
 
-.navigation ul {
-    display: block;
-    
-}
-
 .navigation .line{
     width: 0.13rem;
     background-color: white;
     height: 100%;
     margin: -0.0rem 0rem 0rem 0rem;
     padding: auto;
+}
+
+.navigation ul {
+    display: block;
+    
 }
 
 .navigation  .navigation-bar li {

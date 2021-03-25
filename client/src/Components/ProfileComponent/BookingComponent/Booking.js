@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 
 import './Booking.css'
+import Pictures from './PicturesComponent/Pictures';
 
 const Booking = (props) => {
     console.log(props.userId);
@@ -99,6 +100,7 @@ const Booking = (props) => {
                 </li>
             </ul>
 
+            <Pictures></Pictures>
 
         </div>
     )

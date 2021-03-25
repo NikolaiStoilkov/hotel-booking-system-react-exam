@@ -1,9 +1,8 @@
 .booking{
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    right: 0;
+    width: 100%;
+    left: 0%;
+    display: flex;
+    position: relative;
 }
 
 .booking label{

@@ -18,11 +18,6 @@ const Navigation = () => {
     }
 
 
-    function preventDefault(e){
-        e.preventDefault();
-
-        return links.booking
-    }
 
     return (
         <div className='profile-background'>
@@ -48,7 +43,6 @@ const Navigation = () => {
                         <Switch>
                         <Route path={links.booking}>
                             <Booking userId={_id}></Booking>
-                            <Pictures></Pictures>
                         </Route>
                         <Route path={links.history}>
                             <h1>history</h1>
