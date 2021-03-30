@@ -3,7 +3,6 @@ const router = require('express').Router();
 const Book = require('../services/bookService');
 
 router.post('/booking', async (req,res) => {
-    console.log(req.body);
     const { 
         checkIn,
         stayingFrom,
@@ -27,7 +26,8 @@ router.post('/booking', async (req,res) => {
             roomImg,
              _id }); 
 
-            console.log(room);
+             
+
              res.status(201).json({
                  message: 'Room is booked'
              });

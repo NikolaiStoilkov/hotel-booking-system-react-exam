@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const cubeScheme = new mongoose.Schema({
+const roomSchema = new mongoose.Schema({
     checkIn: {
         type: String,
         required: true,
-        
+
     },
     stayingFrom: {
         type: Number,
@@ -19,7 +19,7 @@ const cubeScheme = new mongoose.Schema({
     typeOfRoom: {
         type: String,
         required: true,
-        
+
     },
     adults: {
         type: Number,
@@ -42,10 +42,7 @@ const cubeScheme = new mongoose.Schema({
         required: true,
         maxlength: 50,
     },
-    guest: {
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
-    }
-});
 
-module.exports = mongoose.model('Room', cubeScheme);
+})
+
+module.exports = mongoose.model('Room', roomSchema);
