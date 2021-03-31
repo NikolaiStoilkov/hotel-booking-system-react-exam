@@ -1,4 +1,99 @@
 .intro-img{
     width: 100%;
     z-index: -1;
+    margin: 0px;
+}
+
+.res-on-img{
+    font-family: 'Cinzel';
+    letter-spacing: 10px;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #fff;
+    opacity: 0.95;
+    z-index: 1;
+    position: absolute;
+    top: 120%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    left: 25%;
+    margin: auto;
+}
+
+.res-on-img-after{
+    font-family: 'Cinzel';
+    color: #edb83a;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 500;
+    z-index: 1;
+    position: absolute;
+    top: 130%;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    left: 28%;
+    margin: auto;
+}
+
+.res-container-info{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    text-align: center;
+    background-color: rgb(242, 242, 242);
+    margin: 0 auto;
+}
+
+.res-container-info .res-image-size{
+    height: 25rem;
+    width: 100%;
+}
+
+
+.res-container-info .left h2{
+    text-align: left;
+    padding: 3rem;
+}
+.res-container-info .left p{
+    text-align: left;
+    padding: 3rem;
+}
+
+.res-container-info .right h2{
+    text-align: right;
+    padding: 3rem;
+}
+
+.res-container-info .right p{
+    text-align: right;
+    padding: 3rem;
+}
+
+.res-section-style-end{
+    background-color: #007fff;
+    width: 100%;
+    height: 10rem;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.res-book-btn{
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    border: 2px white solid;
+    padding: 2rem;
+    position: relative;
+    top: 45%;
+    font-size: 130%;
+}
+
+.res-book-btn:hover{
+    border: 2px white solid;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.582);
 }

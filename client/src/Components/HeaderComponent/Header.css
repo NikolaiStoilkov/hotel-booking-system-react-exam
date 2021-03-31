@@ -5,8 +5,9 @@
     align-items: center;
     min-height: 8rem;
     z-index: 10;
-    background: linear-gradient(to bottom, #007fff 10%,#007fff 100%);
-    transition: min-height 1s ease;
+    /* background: linear-gradient(to bottom, #007fff 10%,#007fff 100%); */
+    background-color: #007fff;
+    transition: min-height 0.5s ease;
     top: 0;
 
 }
@@ -34,7 +35,7 @@
 .navbar-links li:hover{
     background-color: rgba(255, 255, 255, 0.315);
     transition: 0.4s;
-    padding: 0.8rem;
+
 }
 
 .navbar-links a{
@@ -47,22 +48,32 @@
 }
 
 .on-change-transition{
-    background: linear-gradient(to top, rgba(0, 128, 255, 0) 10%,#007fff 30%);
-    min-height: 6rem;
+    /* background: linear-gradient(to top, rgba(0, 128, 255, 0) 10%,#007fff 30%); */
+    background-color: #007fff;
+    min-height: 3rem;
     transition: min-height 1s ease;
+    font-size: 80%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.on-changed-navbar li{
+    padding: 6px 4px 4px 4px;
+
 }
 
 .on-change-logo [id='hotel-logo']{
-    height: 4rem;
-    width: 6rem;
-    transition: height 1s ease;
+    width: 5rem;
+    height: 3rem;
+    transition: height 0.5s ease;
 
 }
 
 .logo{
     width: 9rem;
     height: 5.5rem;
-    transition: height 1s ease;
+    transition: min-height 1s ease;
 
 } 
 

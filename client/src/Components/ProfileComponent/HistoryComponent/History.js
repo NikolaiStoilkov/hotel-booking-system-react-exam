@@ -20,8 +20,6 @@ const History = (props) => {
 
     return (
         <div className='history-containers-info'>
-            <Card />
-            <Card />
 
         </div>
     )

@@ -20,11 +20,12 @@ const Header = (props) => {
 
     useEffect(() => {
         const header = document.getElementById("header");
+        const navbar = document.getElementById("navbar-links-ul")
         const scrollCallBack = window.addEventListener("scroll", () => {
             if (window.pageYOffset >= header.offsetTop) {
-                header.classList.add("sticky" ,"on-change-transition", "on-change-logo");
+                header.classList.add("sticky" ,"on-change-transition", "on-change-logo", "on-changed-navbar");
             } else {
-                header.classList.remove("sticky", "on-change-transition", "on-change-logo");
+                header.classList.remove("sticky", "on-change-transition", "on-change-logo","on-changed-navbar");
             }
         });
         return () => {
@@ -36,7 +37,7 @@ const Header = (props) => {
     return (
         <header id="header" className="navbar">
             <img id='hotel-logo' src={HotelLogo} className="logo" alt="hotelLogo"></img>
-            <ul className="navbar-links">
+            <ul id='navbar-links-ul' className="navbar-links">
                 <li>
                     <Link to="/">HOME</Link>
                 </li>
