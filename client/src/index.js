@@ -7,24 +7,26 @@ import './index.css';
 
 
 import Home from './components/HomeComponent/Home';
-import Hotel from './components/HotelComponent/Hotel';
+// import Hotel from './components/HotelComponent/Hotel';
 import Register from './components/RegisterComponent/Register';
 import Login from './components/LoginComponent/Login';
 import Logout from './components/Logout';
-import Profile from './components/ProfileComponent/Profile'
-import Spa from './components/SpaComponent/Spa'
+import Profile from './components/ProfileComponent/Profile';
+import Spa from './components/SpaComponent/Spa';
+import Restaurant from './components/RestaurantComponent/Restaurant';
 
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Switch>
+                <Route path='/restaurant' component={Restaurant} />
                 <Route path='/spa' component ={Spa} />
                 <Route path='/profile' component={Profile} />
                 <Route path='/logout' component={Logout} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
-                <Route path='/hotel' component={Hotel} />
+                {/* <Route path='/hotel' component={Hotel} /> */}
                 <Route path="/" component={Home} />
             </Switch>
         </BrowserRouter>

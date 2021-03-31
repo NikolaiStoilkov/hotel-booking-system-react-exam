@@ -6,7 +6,8 @@
     min-height: 8rem;
     z-index: 10;
     background: linear-gradient(to bottom, #007fff 10%,#007fff 100%);
-    transition: background 1s;
+    transition: min-height 1s ease;
+    top: 0;
 
 }
 
@@ -47,17 +48,22 @@
 
 .on-change-transition{
     background: linear-gradient(to top, rgba(0, 128, 255, 0) 10%,#007fff 30%);
-    transition: background 1s;
-
+    min-height: 6rem;
+    transition: min-height 1s ease;
 }
 
+.on-change-logo [id='hotel-logo']{
+    height: 4rem;
+    width: 6rem;
+    transition: height 1s ease;
 
-
-
+}
 
 .logo{
     width: 9rem;
     height: 5.5rem;
+    transition: height 1s ease;
+
 } 
 
 .sticky{

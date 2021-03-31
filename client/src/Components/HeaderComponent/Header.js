@@ -22,9 +22,9 @@ const Header = (props) => {
         const header = document.getElementById("header");
         const scrollCallBack = window.addEventListener("scroll", () => {
             if (window.pageYOffset >= header.offsetTop) {
-                header.classList.add("sticky" ,"on-change-transition");
+                header.classList.add("sticky" ,"on-change-transition", "on-change-logo");
             } else {
-                header.classList.remove("sticky", "on-change-transition");
+                header.classList.remove("sticky", "on-change-transition", "on-change-logo");
             }
         });
         return () => {
@@ -35,16 +35,16 @@ const Header = (props) => {
 
     return (
         <header id="header" className="navbar">
-            <img src={HotelLogo} className="logo" alt="hotelLogo"></img>
+            <img id='hotel-logo' src={HotelLogo} className="logo" alt="hotelLogo"></img>
             <ul className="navbar-links">
                 <li>
-                    <Link to="/hotel">HOTEL</Link>
+                    <Link to="/">HOME</Link>
                 </li>
                 <li>
                     <Link to="/spa">SPA</Link>
                 </li>
                 <li>
-                    <Link to="/useful">USEFUL</Link>
+                    <Link to="/restaurant">RESTAURANT</Link>
                 </li>
                 {
                     auth.isLogged === false ?
