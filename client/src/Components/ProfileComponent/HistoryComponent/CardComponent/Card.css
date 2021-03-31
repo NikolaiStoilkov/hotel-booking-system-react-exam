@@ -1,0 +1,12 @@
+.history-container{
+    display: inline-block;
+    margin: 1rem;
+
+}
+
+.room-card{
+    border: 1px white solid;
+    border-radius: 1rem;
+    width:  26rem;
+    height: 35rem;
+}

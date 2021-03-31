@@ -25,6 +25,7 @@ const create = async (roomData) => {
         childrens,
         phoneNumber,
         email,
+        _id,
     });
     user.rooms.push(room);
 

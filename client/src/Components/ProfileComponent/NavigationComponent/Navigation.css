@@ -54,8 +54,11 @@
     width: 8rem;
     border: 1px solid white;
     cursor: pointer;
-    border-radius: 0.6rem;
-
+    transition: 0.4s;
+}
+.navigation  .navigation-bar li:hover{
+    transition: 0.4s;
+    padding: 0.8rem;
 }
 
 .navigation .navigation-bar li:hover{

@@ -42,6 +42,10 @@ const roomSchema = new mongoose.Schema({
         required: true,
         maxlength: 50,
     },
+    creator: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    }
 
 })
 

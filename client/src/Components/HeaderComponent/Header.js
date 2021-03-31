@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import HotelLogo from '../../images/whitepalace.png'
 
@@ -20,10 +21,10 @@ const Header = (props) => {
     useEffect(() => {
         const header = document.getElementById("header");
         const scrollCallBack = window.addEventListener("scroll", () => {
-            if (window.pageYOffset > header.offsetHeight) {
-                header.classList.add("sticky");
+            if (window.pageYOffset >= header.offsetTop) {
+                header.classList.add("sticky" ,"on-change-transition");
             } else {
-                header.classList.remove("sticky");
+                header.classList.remove("sticky", "on-change-transition");
             }
         });
         return () => {
@@ -37,32 +38,32 @@ const Header = (props) => {
             <img src={HotelLogo} className="logo" alt="hotelLogo"></img>
             <ul className="navbar-links">
                 <li>
-                    <a href="/hotel">HOTEL</a>
+                    <Link to="/hotel">HOTEL</Link>
                 </li>
                 <li>
-                    <a href="/spa">SPA</a>
+                    <Link to="/spa">SPA</Link>
                 </li>
                 <li>
-                    <a href="/useful">USEFUL</a>
+                    <Link to="/useful">USEFUL</Link>
                 </li>
                 {
                     auth.isLogged === false ?
                         <li>
-                            <a href="/login">LOGIN</a>
+                            <Link to="/login">LOGIN</Link>
                         </li>
                         :
                         <li>
-                            <a href="/profile">PROFILE</a>
+                            <Link to="/profile">PROFILE</Link>
                         </li>
                 }
                 {
                     auth.isLogged === false ?
                         <li>
-                            <a href="/register">REGISTER</a>
+                            <Link to="/register">REGISTER</Link>
                         </li>
                         :
                         <li>
-                            <a href="/logout">LOGOUT</a>
+                            <Link to="/logout">LOGOUT</Link>
                         </li>
                 }
             </ul>

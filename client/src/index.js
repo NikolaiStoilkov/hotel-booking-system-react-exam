@@ -12,13 +12,14 @@ import Register from './components/RegisterComponent/Register';
 import Login from './components/LoginComponent/Login';
 import Logout from './components/Logout';
 import Profile from './components/ProfileComponent/Profile'
-
+import Spa from './components/SpaComponent/Spa'
 
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Switch>
+                <Route path='/spa' component ={Spa} />
                 <Route path='/profile' component={Profile} />
                 <Route path='/logout' component={Logout} />
                 <Route path='/login' component={Login} />

@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import './Navigation.css'
 
 import Booking from '../BookingComponent/Booking';
 import Pictures from '../BookingComponent/PicturesComponent/Pictures'
+import History  from '../HistoryComponent/History'
 
 
 const Navigation = () => {
@@ -26,13 +27,13 @@ const Navigation = () => {
                 <div className='navigation-bar'>
                     <ul>
                         <li>
-                            <a href={links.booking} >Booking</a>
+                            <Link to={links.booking} >Booking</Link>
                         </li>
                         <li>
-                            <a href={links.history} >History</a>
+                            <Link to={links.history} >History</Link>
                         </li>
                         <li>
-                            <a href="/">Home</a>
+                            <Link to="/">Home</Link>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +46,7 @@ const Navigation = () => {
                             <Booking userId={_id}></Booking>
                         </Route>
                         <Route path={links.history}>
-                            <h1>history</h1>
+                            <History usedId={_id}></History>
                         </Route>
                         </Switch>
                     </div>

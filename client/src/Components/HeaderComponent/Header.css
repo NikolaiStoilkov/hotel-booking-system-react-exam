@@ -6,6 +6,7 @@
     min-height: 8rem;
     z-index: 10;
     background: linear-gradient(to bottom, #007fff 10%,#007fff 100%);
+    transition: background 1s;
 
 }
 
@@ -26,7 +27,13 @@
     height: 1.5rem;
     width: 8rem;
     cursor: pointer;
+    transition: 0.4s;
     
+}
+.navbar-links li:hover{
+    background-color: rgba(255, 255, 255, 0.315);
+    transition: 0.4s;
+    padding: 0.8rem;
 }
 
 .navbar-links a{
@@ -38,9 +45,13 @@
 
 }
 
-.navbar-links li:hover{
-    background-color: rgba(255, 255, 255, 0.315);
+.on-change-transition{
+    background: linear-gradient(to top, rgba(0, 128, 255, 0) 10%,#007fff 30%);
+    transition: background 1s;
+
 }
+
+
 
 
 
