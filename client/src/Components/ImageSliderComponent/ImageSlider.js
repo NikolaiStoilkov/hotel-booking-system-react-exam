@@ -17,7 +17,6 @@ const ImageSlider = ({ slides }) => {
 
     useEffect(() => {
         setInterval(() => {
-            console.log(current);
             nextSlider();
         }, 5000)
     }, [nextSlider]);

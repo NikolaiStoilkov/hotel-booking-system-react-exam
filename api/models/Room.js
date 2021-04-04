@@ -42,9 +42,9 @@ const roomSchema = new mongoose.Schema({
         required: true,
         maxlength: 50,
     },
-    creator: {
+    owner: {
         type: mongoose.Types.ObjectId,
-        ref: 'User'
+        required: true,
     }
 
 })

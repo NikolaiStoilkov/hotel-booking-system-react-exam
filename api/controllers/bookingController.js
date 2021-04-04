@@ -2,8 +2,8 @@ const router = require('express').Router();
 
 const Book = require('../services/bookService');
 
-router.post('/booking', async (req,res) => {
-    const { 
+router.post('/booking', async (req, res) => {
+    const {
         checkIn,
         stayingFrom,
         typeOfRoom,
@@ -12,10 +12,10 @@ router.post('/booking', async (req,res) => {
         phoneNumber,
         email,
         roomImg,
-         _id } = req.body;
+        _id } = req.body;
 
-    try{
-        const room = await Book.create({ 
+    try {
+        const room = await Book.create({
             checkIn,
             stayingFrom,
             typeOfRoom,
@@ -24,20 +24,25 @@ router.post('/booking', async (req,res) => {
             phoneNumber,
             email,
             roomImg,
-             _id }); 
+            _id
+        });
+ 
 
-             
 
-             res.status(201).json({
-                 message: 'Room is booked'
-             });
+        res.status(201).json({
+            message: 'Room is booked'
+        });
 
-    } catch (error){
+    } catch (error) {
         //TODO: send error message
         console.log(error);
     }
+})
 
-
+router.post('/history', (req, res) => {
+    const bookedRooms = Book.getAll(req.body.userId)
+    console.log(bookedRooms)
+    res.status(201).json(bookedRooms)
 })
 
 module.exports = router;

@@ -31,11 +31,7 @@ const userSchema  = new mongoose.Schema({
             message: (props) =>
                 `Password should consist only english letters and digits!`
         }
-    },
-    rooms: [{
-        type: mongoose.Types.ObjectId,
-        ref: 'Room'
-    }]
+    }
 });
 
 userSchema.pre('save', function(next) {

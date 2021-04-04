@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 
+import END_POINTS from '../../../config/END_POINTS'
 import './Booking.css'
 import Pictures from './PicturesComponent/Pictures';
 

@@ -3,7 +3,9 @@
 const END_POINTS = {
     USER: {
             REGISTER: 'auth/register',
-            LOGIN: 'auth/login'
+            LOGIN: 'auth/login',
+            BOOKING: 'profile/booking',
+            HISTORY: 'profile/history',
     }
 }
 

@@ -13,7 +13,7 @@ const create = async (roomData) => {
         roomImg,
         _id } = roomData;
 
-
+    let owner = _id;
     let user = await User.findById(_id);
     // console.log(user);/
     let room = new Room({
@@ -25,13 +25,20 @@ const create = async (roomData) => {
         childrens,
         phoneNumber,
         email,
-        _id,
+        owner,
     });
-    user.rooms.push(room);
 
     return await room.save();
 }
 
+function getAll(userId) {
+    let allRooms = Room.findById(userId)
+        .populate('owner')
+        .lean();
+    return allRooms;
+}
+
 module.exports = {
     create,
+    getAll,
 }
