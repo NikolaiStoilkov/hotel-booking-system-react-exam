@@ -24,14 +24,18 @@ const userSchema  = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 8,
-        validate: {
-            validator: (value) => {
-                return ENGLISH_ALPHANUMERIC_PATTERN.test(value)
-            },
-            message: (props) =>
-                `Password should consist only english letters and digits!`
-        }
-    }
+        // validate: {
+        //     validator: (value) => {
+        //         return ENGLISH_ALPHANUMERIC_PATTERN.test(value)
+        //     },
+        //     message: (props) =>
+        //         `Password should consist only english letters and digits!`
+        // }
+    },
+    rooms: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Room'
+    }]
 });
 
 userSchema.pre('save', function(next) {

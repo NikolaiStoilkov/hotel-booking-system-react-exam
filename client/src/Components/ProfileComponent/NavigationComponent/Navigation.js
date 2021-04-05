@@ -18,24 +18,6 @@ const Navigation = () => {
         history: `/profile/${_id}/history`
     }
 
-
-    const loadHistoryHandler = () => {
-        fetch(`http://localhost:5000/profile/history`, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userId: _id })
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        });
-
-    }
-
-
     return (
         <div className='profile-background'>
 
@@ -46,7 +28,7 @@ const Navigation = () => {
                             <Link to={links.booking} >Booking</Link>
                         </li>
                         <li>
-                            <Link to={links.history} onClick={loadHistoryHandler}>History</Link>
+                            <Link to={links.history}>History</Link>
                         </li>
                         <li>
                             <Link to="/">Home</Link>

@@ -1,41 +1,19 @@
 const Room = require('../models/Room');
 const User = require('../models/User');
+const Data = require('../models/Data');
 
-const create = async (roomData) => {
-    const {
-        checkIn,
-        stayingFrom,
-        typeOfRoom,
-        adults,
-        childrens,
-        phoneNumber,
-        email,
-        roomImg,
-        _id } = roomData;
-
-    let owner = _id;
-    let user = await User.findById(_id);
-    // console.log(user);/
-    let room = new Room({
-        checkIn,
-        stayingFrom,
-        roomImg,
-        typeOfRoom,
-        adults,
-        childrens,
-        phoneNumber,
-        email,
-        owner,
-    });
-
-    return await room.save();
+const create = async (roomData,userId) => {
+        let user = await User.findById(userId);
+        let bkroom = new Data({...roomData, owner: userId});
+        
+        user.rooms.push(bkroom);
+        await user.save();
+        return bkroom.save();
 }
 
 function getAll(userId) {
-    let allRooms = Room.findById(userId)
-        .populate('owner')
-        .lean();
-    return allRooms;
+    let userRooms = Room.find({}).lean();
+    console.log(userRooms);
 }
 
 module.exports = {

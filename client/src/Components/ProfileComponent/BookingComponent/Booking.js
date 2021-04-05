@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 import END_POINTS from '../../../config/END_POINTS'
@@ -16,8 +17,10 @@ const Booking = (props) => {
         phoneNumber: '',
         email: '',
         roomImg: 'https://pix6.agoda.net/hotelImages/6395607/-1/9c841444ec7a198e3fc2da32077ea95b.jpg?s=1024x768',
-        _id: props.userId
+        userId: props.userId
     })
+
+    const history = useHistory();
 
     const PictureSrcHandler = (element) => {
         console.log(element.getAttribute('src'));
@@ -48,7 +51,7 @@ const Booking = (props) => {
             .then(resp => resp.json())
             .then(res => {
                 console.log(res);
-
+                //history.push('/profile/history');
             })
             .catch((e) => console.log(e))
     }

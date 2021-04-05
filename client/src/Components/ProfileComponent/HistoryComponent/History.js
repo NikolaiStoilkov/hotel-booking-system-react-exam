@@ -12,16 +12,32 @@ const History = (props) => {
 
     })
 
+    const loadHistoryHandler = useEffect(async () => {
+        try {
+            const res = await fetch(`http://localhost:5000/profile/history`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userId: props.userId })
+            })
+
+            console.log(res.json());
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    },[]);
 
 
 
+return (
+    <div className='history-containers-info' onLoad={loadHistoryHandler}>
 
-
-    return (
-        <div className='history-containers-info'>
-
-        </div>
-    )
+    </div>
+)
 }
 
 
