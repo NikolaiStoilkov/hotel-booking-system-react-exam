@@ -44,7 +44,7 @@ const Navigation = () => {
                                 <Booking userId={_id}></Booking>
                             </Route>
                             <Route path={links.history}>
-                                <History usedId={_id}></History>
+                                <History userId={_id}></History>
                             </Route>
                         </Switch>
                     </div>

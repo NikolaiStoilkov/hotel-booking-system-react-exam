@@ -6,12 +6,8 @@ import './History.css'
 import Card from './CardComponent/Card'
 
 const History = (props) => {
-
-
-    const [userRoom, setUserRoom] = useState({
-
-    })
-
+    
+    // console.log(JSON.stringify({user: props.userId}))
     const loadHistoryHandler = useEffect(() => {
 
         fetch(`http://localhost:5000/profile/history`, {
@@ -20,19 +16,25 @@ const History = (props) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ userId: props.userId })
+            body: JSON.stringify({user: props.userId})
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            });
+            .then(resp => {
+                return resp.json();
+            })
+            .then(res => {
+                console.log(res);
+            })
+            .catch((error) => {
+                //TODO: make notification
+                console.log(error);
+            })
 
     }, []);
 
 
 
     return (
-        <div className='history-containers-info' onLoad={loadHistoryHandler}>
+        <div className='history-containers-info' onLoad={loadHistoryHandler} >
 
         </div>
     )

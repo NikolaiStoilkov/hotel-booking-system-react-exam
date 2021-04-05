@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const config = require('./index');
 
 module.exports = () => {
-    mongoose.connect(config.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(config.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
     const db = mongoose.connection;
 
