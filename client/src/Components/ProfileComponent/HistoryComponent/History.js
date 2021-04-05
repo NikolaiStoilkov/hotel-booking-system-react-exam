@@ -12,32 +12,30 @@ const History = (props) => {
 
     })
 
-    const loadHistoryHandler = useEffect(async () => {
-        try {
-            const res = await fetch(`http://localhost:5000/profile/history`, {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ userId: props.userId })
-            })
+    const loadHistoryHandler = useEffect(() => {
 
-            console.log(res.json());
+        fetch(`http://localhost:5000/profile/history`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId: props.userId })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            });
 
-        } catch (error) {
-            console.log(error);
-        }
-
-    },[]);
+    }, []);
 
 
 
-return (
-    <div className='history-containers-info' onLoad={loadHistoryHandler}>
+    return (
+        <div className='history-containers-info' onLoad={loadHistoryHandler}>
 
-    </div>
-)
+        </div>
+    )
 }
 
 

@@ -11,16 +11,20 @@ const create = async (roomData,userId) => {
         return bkroom.save();
 }
 
+
 function getAll(userId) {
-    let userRooms = Data.find({owner: userId},function(err,data){
+
+    var userRoomsData = [];
+    let userRooms = Data.find({owner: userId},function(err, data){
          if(err){
              console.log(err);
          }else{
-             return data;
+             userRoomsData = data;
          }
     }).lean();
 
-    return userRooms;
+
+    return userRoomsData;
 }
 
 module.exports = {

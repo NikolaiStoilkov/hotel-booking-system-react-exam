@@ -19,8 +19,10 @@ router.post('/booking', async (req, res) => {
 })
 
 router.post('/history', (req, res) => {
-    const bookedRooms = Book.getAll(req.body.userId)
-    res.json(bookedRooms);
+    const bookedRooms = Book.getAll(req.body.userId);
+    
+    res.status(201).json({rooms: bookedRooms});
+
 })
 
 module.exports = router;
