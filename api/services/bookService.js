@@ -12,7 +12,7 @@ const create = async (roomData,userId) => {
 }
 
 function getAll(userId) {
-    let userRooms = Room.find({}).lean();
+    let userRooms = Room.find({owner: userId}).lean();
     console.log(userRooms);
 }
 
