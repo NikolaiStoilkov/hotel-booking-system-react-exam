@@ -12,8 +12,15 @@ const create = async (roomData,userId) => {
 }
 
 function getAll(userId) {
-    let userRooms = Room.find({owner: userId}).lean();
-    console.log(userRooms);
+    let userRooms = Data.find({owner: userId},function(err,data){
+         if(err){
+             console.log(err);
+         }else{
+             return data;
+         }
+    }).lean();
+
+    return userRooms;
 }
 
 module.exports = {
