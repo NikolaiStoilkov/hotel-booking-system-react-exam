@@ -25,17 +25,29 @@ const getAll = async (userId) => {
         }
     })
 
-    roomsId.forEach(async (x) => {
+    // roomsId.forEach(async (x) => {
+        // try {
+        //     const bookedRoom = await Data.findById(x);
+        //     // console.log(bookedRoom);
+        //     await userBookedRooms.push(bookedRoom);
+        // } catch (error) {
+        //     console.log(err);
+        // }
+    // });
+
+    for(const room of roomsId) {
+        console.log(room);
         try {
-            const bookedRoom = await Data.findById(x);
+            const bookedRoom = await Data.findById(room);
             // console.log(bookedRoom);
             await userBookedRooms.push(bookedRoom);
         } catch (error) {
             console.log(err);
         }
-    });
+    }
+    // Promise.all(roomsId.map(async () => {
 
-
+    // }))
     
 
     return userBookedRooms;
