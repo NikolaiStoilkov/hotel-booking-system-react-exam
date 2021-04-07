@@ -14,7 +14,7 @@ router.post('/booking', async (req, res) => {
         //TODO: send error message
         console.log(error);
     }
-})
+});
 
 router.post('/history', async (req, res) => {
     try{
@@ -24,6 +24,20 @@ router.post('/history', async (req, res) => {
         console.log(error);
     }
 
+});
+
+router.post('/history/delete', async (req,res) => {
+
+
+    console.log(req.body.roomId);
+    console.log(req.body.userId);
+    try{
+        const deleteBookedRoom = await Book.deleteRoom(req.body.roomId,req.body.userId);
+        console.log(deleteBookedRoom);
+        res.status(201).json(deleteBookedRoom);
+    }catch(error){
+        console.log(error);
+    }
 })
 
 module.exports = router;

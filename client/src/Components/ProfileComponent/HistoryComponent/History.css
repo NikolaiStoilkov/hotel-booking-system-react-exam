@@ -30,3 +30,29 @@
     border: 1px solid white;
 
 }
+
+.details-btn{
+    text-decoration: none;
+    color: white;
+    
+
+}
+
+.booked-room-container [id='btn'] li{
+    margin: 2rem;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.booked-room-container [id='btn'] li:hover{
+    background-color: rgba(255, 255, 255, 0.297);
+    cursor: pointer;
+}
+
+.booked-room-container ul .details-btn{
+   
+}
+
+.loading{
+    color: white;
+}

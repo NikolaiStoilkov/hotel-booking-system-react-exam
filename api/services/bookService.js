@@ -37,7 +37,32 @@ const getAll = async (userId) => {
 
 }
 
+const deleteRoom = async (roomId,userId) => {
+    let roomsId = [];
+    try{
+        const userRooms = await User.findById(userId, async (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(data.rooms);
+                roomsId = data.rooms;
+            }
+        })
+        
+        const room = await Data.findByIdAndDelete(roomId);     
+        roomsId.pop(roomId);
+        let user = await User.findById(userId);
+        user.rooms = roomsId;
+        await user.save();
+        return {message: `Room is deleted`}
+    }catch(error){
+        return { message: `Room doesn\'t exist!`}
+    }
+    
+}
+
 module.exports = {
     create,
     getAll,
+    deleteRoom,
 }

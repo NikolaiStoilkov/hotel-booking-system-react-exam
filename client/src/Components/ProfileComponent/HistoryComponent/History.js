@@ -11,6 +11,9 @@ const History = (props) => {
 
     const [data, setRooms] = useState([]);
     // console.log(JSON.stringify({user: props.userId}))
+
+
+
     const loadHistoryHandler = useEffect(() => {
 
         fetch(`http://localhost:5000/profile/history`, {
@@ -38,52 +41,24 @@ const History = (props) => {
     return (
         <div className='history-containers-info' onLoad={loadHistoryHandler} >
             {
-                (data.rooms != undefined ?
-                    data.rooms.map((room) => {
-                        // console.log(room);
-                        return (<div className='booked-room-container'>
-                            <div className='room-data'>
-                                <Link to='/profile/userId/history/details' className='details-btn' />
-                                <ul>
-                                    <li>
-                                        <label>Check-in: </label>
-                                        <label>{room.checkIn}</label>
-                                    </li>
-                                    <li>
-                                        <label>Staying for: </label>
-                                        <label>{room.stayingFrom}</label>
-                                    </li>
-                                    <li>
-                                        <label>Type of room: </label>
-                                        <label>{room.typeOfRoom}</label>
-                                    </li>
-                                    <li>
-                                        <label>Adults: </label>
-                                        <label>{room.adults}</label>
-                                    </li>
-                                    <li>
-                                        <label>Childrens: </label>
-                                        <label>{room.childrens}</label>
-                                    </li>
-                                    <li>
-                                        <label>Phone number: </label>
-                                        <label>{room.phoneNumber}</label>
-
-                                    </li>
-                                    <li>
-                                        <label>email adress: </label>
-                                        <label>{room.email}</label>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <img src={room.roomImg} className='logo logo-to-right' alt="booked-room-img" />
-                        </div>)
+                (data.rooms != undefined || data.rooms != null ?
+                    data.rooms.map((room, i) => {
+                        console.log(i);
+                        console.log(room);
+                        let roomId = room._id;
+                        return (
+                            <Card callback={loadHistoryHandler}
+                                uniqRoomId={roomId}
+                                userId={props.userId}
+                                roomData={room}
+                                uniqKey={i} >
+                            </Card>)
                     }) :
-                    <div>
+                    <div className='loading'>
                         <p>Loading...</p>
                     </div>)
             }
+
 
         </div>
     )

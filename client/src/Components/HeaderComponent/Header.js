@@ -54,7 +54,7 @@ const Header = (props) => {
                         </li>
                         :
                         <li>
-                            <Link to="/profile">PROFILE</Link>
+                            <Link to={`/profile/${auth._id}/booking`}>PROFILE</Link>
                         </li>
                 }
                 {
