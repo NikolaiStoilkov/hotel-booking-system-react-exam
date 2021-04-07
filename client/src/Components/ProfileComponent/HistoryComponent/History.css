@@ -1,2 +1,32 @@
 .history-containers-info{
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.booked-room-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+    border: 1px solid white;
+    width: 100%;
+    margin-bottom: 3rem;
+
+}
+
+.booked-room-container label{
+    color: white;
+}
+
+.booked-room-container li {
+    margin: 0.5rem;
+}
+
+.logo-to-right{
+    width: 12rem;
+    height: 9rem;
+    border-radius: 1rem;
+    border: 1px solid white;
+
 }

@@ -15,7 +15,7 @@ const Card = (props) => {
 
     } , []);
 
-
+    console.log(props.roomDetails);
     return (
         <div className='history-container'>
             <div className="room-card">

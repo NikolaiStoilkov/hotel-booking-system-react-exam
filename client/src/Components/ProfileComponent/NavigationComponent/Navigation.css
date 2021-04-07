@@ -16,13 +16,14 @@
 
 .navigation{
     width: 95%;
-    height: 45rem;
+    height: 100%;
     justify-content: space-around;
     border: 0.13rem solid white;
     border-radius: 1rem;
     margin: 2rem;
     display: flex;
     background-color: #0080ffbb;
+    position: relative;
 }
 
 .navigation-bar{
@@ -91,6 +92,7 @@
 }
 
 .navigation .navigation-book-list .user {
+    
     background-color: transparent;
     color: white;
     font-size: 22px;

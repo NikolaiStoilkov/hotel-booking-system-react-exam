@@ -19,7 +19,6 @@ router.post('/booking', async (req, res) => {
 router.post('/history', async (req, res) => {
     try{
         const bookedRooms = await Book.getAll(req.body.user);
-        console.log(bookedRooms);
         res.status(201).json({ rooms: bookedRooms })
     }catch(error){
         console.log(error);
