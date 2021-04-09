@@ -28,9 +28,6 @@ router.post('/history', async (req, res) => {
 
 router.post('/history/delete', async (req,res) => {
 
-
-    console.log(req.body.roomId);
-    console.log(req.body.userId);
     try{
         const deleteBookedRoom = await Book.deleteRoom(req.body.roomId,req.body.userId);
         console.log(deleteBookedRoom);
@@ -38,15 +35,24 @@ router.post('/history/delete', async (req,res) => {
     }catch(error){
         console.log(error);
     }
-})
+});
 
-router.post('/history/details' , async (req,res) => {
-    console.log(req.body);
+router.post('/history/edit' , async (req,res) => {
     try{
-        // const editRoom = await Book.update()
+        const roomData = await Book.getRoomData(req.body.roomId)
+        res.status(201).json({editRoom: roomData})
     }catch(error){
         console.log(error);
     }
 })
+
+router.post('/history/edit/update', async (req, res) =>{
+    try{
+        const updatedRoom = await Book.update(req.body.roomId, req.body.roomData)
+        res.status(201).json(updatedRoom);
+    }catch(err){
+        console.log(err);
+    }
+});
 
 module.exports = router;

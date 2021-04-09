@@ -1,24 +1,28 @@
-import { Route } from 'react-router-dom';
-
+import { Route, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 import './Profile.css'
 import Navigation from './NavigationComponent/Navigation'
-import Details from '../ProfileComponent/HistoryComponent/DetailsComponent/Details';
-
-
+import Details from './HistoryComponent/EditComponent/Edit';
+import Edit from './HistoryComponent/EditComponent/Edit'
 
 const Profile = (props) => {
 
-    function setId(id) {
-        props.getUserId(id);
+    const [currentId, setCurrentId ] = useState('');
+    const getId = (id) => {
+        setCurrentId(id);
     }
 
     return (
         <div>
 
-            <Navigation getUserId={setId}></Navigation>
-
+            <Navigation getId={getId} ></Navigation>
+            <Switch>
+                <Route path='/profile/history/edit' >
+                    <Edit roomId={currentId}></Edit>
+                </Route>
+            </Switch>
 
 
         </div>

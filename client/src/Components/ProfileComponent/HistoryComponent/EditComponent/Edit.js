@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
-import './Details.css';
+import './Edit.css';
 
 import Pictures from '../../BookingComponent/PicturesComponent/Pictures';
 
-const Details = (props) => {
-    const { _id } = JSON.parse(localStorage.getItem('user'));
-    const userId = _id;
+const Edit = (props) => {
+
     const [room, setRoom] = useState({
         checkIn: '',
         stayingFrom: '',
@@ -16,44 +16,56 @@ const Details = (props) => {
         childrens: '',
         phoneNumber: '',
         email: '',
-        roomImg: 'https://pix6.agoda.net/hotelImages/6395607/-1/9c841444ec7a198e3fc2da32077ea95b.jpg?s=1024x768',
-        userId: userId
+        roomImg: '',
     })
-    console.log(userId)
-    const onLoadDataHandler = (e) => {
-        e.preventDefault();
-        console.log({ userId: _id});
-        fetch(`http://localhost:5000/profile/history/details`, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userId: room.userId})
-        })
-        .then(resp => resp.json())
-        .then(data => {
-            console.log(data);
-        })
 
+    const history = useHistory();
+    const onLoadRoomDataHandler = (e) => {
+        e.preventDefault();
+
+        fetch(`http://localhost:5000/profile/history/edit`,
+            {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ roomId: props.roomId })
+            })
+            .then(resp => resp.json())
+            .then(({ editRoom }) => {
+                console.log(editRoom)
+                setRoom({
+                    checkIn: editRoom.checkIn,
+                    stayingFrom: editRoom.stayingFrom,
+                    typeOfRoom: editRoom.typeOfRoom,
+                    adults: editRoom.adults,
+                    childrens: editRoom.childrens,
+                    phoneNumber: editRoom.phoneNumber,
+                    email: editRoom.email,
+                    roomImg: editRoom.roomImg,
+                });
+            })
     }
+
+
     const ClickHandler = (e) => {
         e.preventDefault();
-        // fetch(`http://localhost:5000/profile/booking`,
-        //     {
-        //         method: 'POST',
-        //         mode: 'cors',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({userID})
-        //     })
-        //     .then(resp => resp.json())
-        //     .then(res => {
-        //         console.log(res);
-        //         history.push('/profile');
-        //     })
-        //     .catch((e) => console.log(e))
+        fetch(`http://localhost:5000/profile/history/edit/update`,
+            {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ roomId: props.roomId, roomData: room })
+            })
+            .then(resp => resp.json())
+            .then(res => {
+                console.log(res);
+                history.push('/profile');
+            })
+            .catch((e) => console.log(e))
     }
 
     const PictureSrcHandler = (element) => {
@@ -83,7 +95,7 @@ const Details = (props) => {
     }
 
     return (
-        <div className="details-room-background" onLoad={onLoadDataHandler}>
+        <div className="details-room-background" onLoad={props.roomId != '' ? onLoadRoomDataHandler : null} >
             <div className='update-room-data'>
                 <div className="booking">
                     <form>
@@ -143,4 +155,4 @@ const Details = (props) => {
     )
 }
 
-export default Details;
+export default Edit;

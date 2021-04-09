@@ -18,8 +18,10 @@ const Navigation = (props) => {
         history: `/profile/${_id}/history`
     }
 
-    function getUser(){
-        props.getUserId(_id);
+    let hId = '';
+    const getId = (id) => {
+        hId = id;
+        props.getId(hId);
     }
 
     return (
@@ -48,7 +50,7 @@ const Navigation = (props) => {
                                 <Booking userId={_id}></Booking>
                             </Route>
                             <Route path={links.history}>
-                                <History userId={_id}></History>
+                                <History userId={_id}  getId={getId}></History>
                             </Route>
                         </Switch>
                     </div>

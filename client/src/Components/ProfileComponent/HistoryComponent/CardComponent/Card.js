@@ -4,6 +4,10 @@ import { Link, useHistory, Route, Switch } from 'react-router-dom';
 
 import './Card.css';
 
+import Edit from '../EditComponent/Edit';
+
+
+
 
 const Card = (props) => {
 
@@ -15,11 +19,11 @@ const Card = (props) => {
     }, []);
 
     const history = useHistory();
+    let id;
 
     const deleteBookedRoomFromHistoryHandler = (e) => {
         const elementWithId = e.target.parentNode.parentNode.parentNode;
         const selectedPartials = elementWithId.querySelectorAll('.room-data');
-        let id;
         for (const divRoomsId of selectedPartials) {
             id = divRoomsId.id;
         }
@@ -46,18 +50,21 @@ const Card = (props) => {
             })
     }
 
-
-
     return (<div className='booked-room-container' >
         <ul id='btn'>
             <li>
-                <Link to={`/details`} className='details-btn' >Details</Link>
+                <Link to={`/profile/history/edit`} className='details-btn' >Edit</Link>
             </li>
             <li>
                 <Link to={`/profile/${props.userId}/history/delete`} className='details-btn' onClick={deleteBookedRoomFromHistoryHandler}>Delete</Link>
 
             </li>
         </ul>
+
+
+        
+
+        
         <div className='room-data' onLoad={setId}>
 
             <ul>

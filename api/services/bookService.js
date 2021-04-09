@@ -24,7 +24,7 @@ const getAll = async (userId) => {
         }
     })
 
-    for(const room of roomsId) {
+    for (const room of roomsId) {
         try {
             const bookedRoom = await Data.findById(room);
             await userBookedRooms.push(bookedRoom);
@@ -37,9 +37,9 @@ const getAll = async (userId) => {
 
 }
 
-const deleteRoom = async (roomId,userId) => {
+const deleteRoom = async (roomId, userId) => {
     let roomsId = [];
-    try{
+    try {
         const userRooms = await User.findById(userId, async (err, data) => {
             if (err) {
                 console.log(err);
@@ -48,21 +48,42 @@ const deleteRoom = async (roomId,userId) => {
                 roomsId = data.rooms;
             }
         })
-        
-        const room = await Data.findByIdAndDelete(roomId);     
+
+        const room = await Data.findByIdAndDelete(roomId);
         roomsId.pop(roomId);
         let user = await User.findById(userId);
         user.rooms = roomsId;
         await user.save();
-        return {message: `Room is deleted`}
-    }catch(error){
-        return { message: `Room doesn\'t exist!`}
+        return { message: `Room is deleted` }
+    } catch (error) {
+        return { message: `Room doesn\'t exist!` }
     }
-    
+
 }
+
+const getRoomData = async (roomId) => {
+    try {
+        const roomData = await Data.findById(roomId);
+        return roomData;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const update = async (roomId, roomData) => {
+    try{
+        await Data.updateOne({_id: roomId}, roomData)
+        return { message: `Room is updated successully!`}
+    }catch(err){
+        console.log(err);
+    }
+}
+
 
 module.exports = {
     create,
     getAll,
     deleteRoom,
+    getRoomData,
+    update,
 }

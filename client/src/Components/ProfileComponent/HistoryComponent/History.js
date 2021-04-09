@@ -11,9 +11,7 @@ const History = (props) => {
 
     const [data, setRooms] = useState([]);
     // console.log(JSON.stringify({user: props.userId}))
-
-
-
+    
     const loadHistoryHandler = useEffect(() => {
 
         fetch(`http://localhost:5000/profile/history`, {
@@ -44,6 +42,7 @@ const History = (props) => {
                 (data.rooms != undefined || data.rooms != null ?
                     data.rooms.map((room, i) => {
                         let roomId = room._id;
+                        props.getId(roomId);
                         return (
                             <Card callback={loadHistoryHandler}
                                 uniqRoomId={roomId}
