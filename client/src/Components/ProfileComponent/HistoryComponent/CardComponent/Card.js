@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, Route, Switch } from 'react-router-dom';
 
 
-import './Card.css'
+import './Card.css';
+
 
 const Card = (props) => {
 
@@ -30,7 +31,7 @@ const Card = (props) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ roomId: id, userId: props.userId})
+            body: JSON.stringify({ roomId: id, userId: props.userId })
         })
             .then(resp => {
                 return resp.json();
@@ -50,7 +51,7 @@ const Card = (props) => {
     return (<div className='booked-room-container' >
         <ul id='btn'>
             <li>
-                <Link to={`/profile/${props.userId}/history/details`} className='details-btn' >Update</Link>
+                <Link to={`/details`} className='details-btn' >Details</Link>
             </li>
             <li>
                 <Link to={`/profile/${props.userId}/history/delete`} className='details-btn' onClick={deleteBookedRoomFromHistoryHandler}>Delete</Link>

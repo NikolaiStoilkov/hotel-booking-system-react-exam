@@ -9,13 +9,17 @@ import Pictures from '../BookingComponent/PicturesComponent/Pictures'
 import History from '../HistoryComponent/History'
 
 
-const Navigation = () => {
+const Navigation = (props) => {
 
 
     let { _id, username } = JSON.parse(localStorage.getItem('user'));
     const links = {
         booking: `/profile/${_id}/booking`,
         history: `/profile/${_id}/history`
+    }
+
+    function getUser(){
+        props.getUserId(_id);
     }
 
     return (

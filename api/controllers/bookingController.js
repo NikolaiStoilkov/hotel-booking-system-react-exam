@@ -40,4 +40,13 @@ router.post('/history/delete', async (req,res) => {
     }
 })
 
+router.post('/history/details' , async (req,res) => {
+    console.log(req.body);
+    try{
+        // const editRoom = await Book.update()
+    }catch(error){
+        console.log(error);
+    }
+})
+
 module.exports = router;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +14,7 @@ import Logout from './components/Logout';
 import Profile from './components/ProfileComponent/Profile';
 import Spa from './components/SpaComponent/Spa';
 import Restaurant from './components/RestaurantComponent/Restaurant';
+import Details from './components/ProfileComponent/HistoryComponent/DetailsComponent/Details';
 
 
 ReactDOM.render(
@@ -21,12 +22,12 @@ ReactDOM.render(
         <BrowserRouter>
             <Switch>
                 <Route path='/restaurant' component={Restaurant} />
-                <Route path='/spa' component ={Spa} />
+                <Route path='/spa' component={Spa} />
+                <Route path={`/details`}  component={Details} />
                 <Route path='/profile' component={Profile} />
                 <Route path='/logout' component={Logout} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
-                {/* <Route path='/hotel' component={Hotel} /> */}
                 <Route path="/" component={Home} />
             </Switch>
         </BrowserRouter>

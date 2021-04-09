@@ -7,7 +7,6 @@ import './Booking.css'
 import Pictures from './PicturesComponent/Pictures';
 
 const Booking = (props) => {
-    const { _id } = localStorage.getItem('user');
     const [room, setRoom] = useState({
         checkIn: '',
         stayingFrom: '',
@@ -57,7 +56,6 @@ const Booking = (props) => {
     }
 
     const ChangeHandler = (e) => {
-        console.log(e.target);
         const { name, value } = e.target;
 
         setRoom(prevInput => {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import END_POINTS from '../../../config/END_POINTS';
 import './History.css'
 
-import Card from './CardComponent/Card'
+import Card from './CardComponent/Card';
 
 const History = (props) => {
 
@@ -43,8 +43,6 @@ const History = (props) => {
             {
                 (data.rooms != undefined || data.rooms != null ?
                     data.rooms.map((room, i) => {
-                        console.log(i);
-                        console.log(room);
                         let roomId = room._id;
                         return (
                             <Card callback={loadHistoryHandler}
