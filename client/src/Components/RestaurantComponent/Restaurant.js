@@ -62,7 +62,7 @@ const Restaurant = () => {
                 </div>
             </div>
             <section className="res-section-style-end">
-                <Link to={userData.isLogged == true ? `/profile/${userData._id}/booking` : '/register'}  className='res-book-btn'>НАПРАВИ РЕЗЕРВАЦИЯ</Link>
+                <Link to={userData.isLogged === true ? `/profile/${userData._id}/booking` : '/register'}  className='res-book-btn'>НАПРАВИ РЕЗЕРВАЦИЯ</Link>
             </section>
             <Footer />
         </div>

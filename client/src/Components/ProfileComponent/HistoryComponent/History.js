@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 
-
-import END_POINTS from '../../../config/END_POINTS';
 import './History.css'
 
 import Card from './CardComponent/Card';
 
 const History = (props) => {
-
     const [data, setRooms] = useState([]);
-    // console.log(JSON.stringify({user: props.userId}))
-    
     const loadHistoryHandler = useEffect(() => {
 
         fetch(`http://localhost:5000/profile/history`, {
@@ -33,19 +27,16 @@ const History = (props) => {
                 console.log(error);
             })
 
-    }, []);
-
+    }, [props.userId]);
 
     return (
         <div className='history-containers-info' onLoad={loadHistoryHandler} >
             {
-                (data.rooms != undefined || data.rooms != null ?
+                (data.length !== 0 ?
                     data.rooms.map((room, i) => {
-                        let roomId = room._id;
-                        props.getId(roomId);
                         return (
-                            <Card callback={loadHistoryHandler}
-                                uniqRoomId={roomId}
+                            <Card
+                                uniqRoomId={room._id}
                                 userId={props.userId}
                                 roomData={room}
                                 uniqKey={i} >
@@ -55,8 +46,6 @@ const History = (props) => {
                         <p>Loading...</p>
                     </div>)
             }
-
-
         </div>
     )
 }

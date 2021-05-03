@@ -1,35 +1,19 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import './index.css';
 
+import App from './App'
 
-import Home from './components/HomeComponent/Home';
-// import Hotel from './components/HotelComponent/Hotel';
-import Register from './components/RegisterComponent/Register';
-import Login from './components/LoginComponent/Login';
-import Logout from './components/Logout';
-import Profile from './components/ProfileComponent/Profile';
-import Spa from './components/SpaComponent/Spa';
-import Restaurant from './components/RestaurantComponent/Restaurant';
-import Edit from './components/ProfileComponent/HistoryComponent/EditComponent/Edit';
 
 
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Switch>
-                <Route path='/restaurant' component={Restaurant} />
-                <Route path='/spa' component={Spa} />
-                <Route path='/profile' component={Profile} />
-                <Route path='/logout' component={Logout} />
-                <Route path='/login' component={Login} />
-                <Route path='/register' component={Register} />
-                <Route path="/" component={Home} />
-            </Switch>
+            <App></App>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

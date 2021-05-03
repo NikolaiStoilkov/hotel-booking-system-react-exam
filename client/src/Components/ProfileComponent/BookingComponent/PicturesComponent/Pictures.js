@@ -4,7 +4,7 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import './Picture.css'
 
 import { RoomData } from '../RoomDataImages';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 
 

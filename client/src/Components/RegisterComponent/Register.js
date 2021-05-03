@@ -32,7 +32,7 @@ const Register = () => {
     const HandleClick = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/${END_POINTS.USER.REGISTER}`, {
+        fetch(`${END_POINTS.LOCAL_HOST}${END_POINTS.USER.REGISTER}`, {
             method: 'POST',
             mode: 'cors',
             headers: {

@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "firebase-tools": "^9.10.0",
     "mongoose": "^5.11.18",
     "nodemon": "^2.0.7"
   }

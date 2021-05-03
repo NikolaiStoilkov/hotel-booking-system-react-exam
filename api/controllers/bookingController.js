@@ -17,8 +17,10 @@ router.post('/booking', async (req, res) => {
 });
 
 router.post('/history', async (req, res) => {
+    // console.log(req.body);
     try{
         const bookedRooms = await Book.getAll(req.body.user);
+        console.log({ rooms: bookedRooms });
         res.status(201).json({ rooms: bookedRooms })
     }catch(error){
         console.log(error);
@@ -39,6 +41,7 @@ router.post('/history/delete', async (req,res) => {
 
 router.post('/history/edit' , async (req,res) => {
     try{
+        console.log(req.body);
         const roomData = await Book.getRoomData(req.body.roomId)
         res.status(201).json({editRoom: roomData})
     }catch(error){

@@ -1,6 +1,7 @@
 
 
 const END_POINTS = {
+    LOCAL_HOST: 'http://localhost:5000/',
     USER: {
             REGISTER: 'auth/register',
             LOGIN: 'auth/login',

@@ -5,14 +5,10 @@ const Data = require('../models/Data');
 const create = async (roomData, userId) => {
     let user = await User.findById(userId);
     let bkroom = new Data({ ...roomData, owner: userId });
-
     user.rooms.push(bkroom);
     await user.save();
     return bkroom.save();
 }
-
-
-
 const getAll = async (userId) => {
     let roomsId = [];
     let userBookedRooms = [];
@@ -24,6 +20,7 @@ const getAll = async (userId) => {
         }
     })
 
+     
     for (const room of roomsId) {
         try {
             const bookedRoom = await Data.findById(room);
@@ -33,10 +30,7 @@ const getAll = async (userId) => {
         }
     }
     return userBookedRooms;
-
-
 }
-
 const deleteRoom = async (roomId, userId) => {
     let roomsId = [];
     try {
@@ -48,7 +42,6 @@ const deleteRoom = async (roomId, userId) => {
                 roomsId = data.rooms;
             }
         })
-
         const room = await Data.findByIdAndDelete(roomId);
         roomsId.pop(roomId);
         let user = await User.findById(userId);
@@ -58,7 +51,6 @@ const deleteRoom = async (roomId, userId) => {
     } catch (error) {
         return { message: `Room doesn\'t exist!` }
     }
-
 }
 
 const getRoomData = async (roomId) => {
@@ -72,7 +64,7 @@ const getRoomData = async (roomId) => {
 
 const update = async (roomId, roomData) => {
     try{
-        await Data.updateOne({_id: roomId}, roomData)
+        await Data.findByIdAndUpdate({_id: roomId}, roomData)
         return { message: `Room is updated successully!`}
     }catch(err){
         console.log(err);

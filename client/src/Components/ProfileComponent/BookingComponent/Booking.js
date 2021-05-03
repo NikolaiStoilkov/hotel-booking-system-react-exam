@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 
-import END_POINTS from '../../../config/END_POINTS'
 import './Booking.css'
 import Pictures from './PicturesComponent/Pictures';
 
@@ -15,7 +14,7 @@ const Booking = (props) => {
         childrens: '',
         phoneNumber: '',
         email: '',
-        roomImg: 'https://pix6.agoda.net/hotelImages/6395607/-1/9c841444ec7a198e3fc2da32077ea95b.jpg?s=1024x768',
+        roomImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5_vPknhtzuGHEvSr6R_wYmCo_dYKre8FIFg&usqp=CAU',
         userId: props.userId
     })
 
@@ -25,6 +24,7 @@ const Booking = (props) => {
         console.log(element.getAttribute('src'));
         let elementSrc = element.getAttribute('src').toString();
 
+        console.log(elementSrc)
         setRoom((prevProps) => {
             return {
                 ...prevProps,
@@ -33,7 +33,7 @@ const Booking = (props) => {
         })
         console.log(room);
 
-    }
+    };
 
 
     const ClickHandler = (e) => {

@@ -20,7 +20,6 @@ const Header = (props) => {
 
     useEffect(() => {
         const header = document.getElementById("header");
-        const navbar = document.getElementById("navbar-links-ul")
         const scrollCallBack = window.addEventListener("scroll", () => {
             if (window.pageYOffset >= header.offsetTop) {
                 header.classList.add("sticky" ,"on-change-transition", "on-change-logo", "on-changed-navbar");
@@ -74,12 +73,3 @@ const Header = (props) => {
 }
 
 export default Header;
-
-
-{/* <a href="/hotel">HOTEL</a>
-<a href="/rooms">ROOMS</a>
-<a href="/restaurants">RESTAURANTS</a>
-<a href="/spa">SPA</a>
-<a href="/contacts">CONTACTS</a>
-<a href="/login">LOGIN</a>
-<a href="/register">REGISTER</a> */}

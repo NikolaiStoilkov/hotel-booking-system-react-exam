@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
 
 import './Edit.css';
@@ -19,6 +19,7 @@ const Edit = (props) => {
         roomImg: '',
     })
 
+    const { roomId } = useParams();
     const history = useHistory();
     const onLoadRoomDataHandler = (e) => {
         e.preventDefault();
@@ -30,7 +31,7 @@ const Edit = (props) => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ roomId: props.roomId })
+                body: JSON.stringify({ roomId })
             })
             .then(resp => resp.json())
             .then(({ editRoom }) => {
@@ -48,7 +49,6 @@ const Edit = (props) => {
             })
     }
 
-
     const ClickHandler = (e) => {
         e.preventDefault();
         fetch(`http://localhost:5000/profile/history/edit/update`,
@@ -58,7 +58,7 @@ const Edit = (props) => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ roomId: props.roomId, roomData: room })
+                body: JSON.stringify({ roomId, roomData: room })
             })
             .then(resp => resp.json())
             .then(res => {
@@ -95,7 +95,7 @@ const Edit = (props) => {
     }
 
     return (
-        <div className="details-room-background" onLoad={props.roomId != '' ? onLoadRoomDataHandler : null} >
+        <div className="details-room-background" onLoad={props.roomId !== '' ? onLoadRoomDataHandler : null} >
             <div className='update-room-data'>
                 <div className="booking">
                     <form>
